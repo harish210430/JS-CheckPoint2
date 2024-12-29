@@ -164,3 +164,33 @@ console.log(fruits.includes("Banana"));
 
 
 // Explain copy by value, copy by reference, pass by value and pass by reference. Write multiple examples to explain this.
+
+// Copy by Value: Premitive data types does copy by Value becoz we can copy the value with var_name.
+let user02 = "kamaljit";
+let newUser02 = user02;
+user02 = "Shreevant"; // becoz it does copy by value So newUser02 remain same.
+console.log(newUser02);
+
+// Copy by Reference: Non-Premitive does copy by reference becoz we can only copy the address with var_name.
+let stud = {
+    name: "Shekhar",
+    age: 19,
+};
+stud.name = "Kisan"; // it will copy the new name by it's reference.
+let newStud = stud;
+console.log(newStud);
+
+// Pass by Value: Premitive does copy by Value And also Pass by Value, When we pass value to Any func. the Values gets copied But the variable's value can not be updated.
+function add(num1, num2) {
+    return num1 + num2;
+};
+let a = 10, b = 20;
+console.log(add(20, 1));
+
+// Pass by Reference: Non-Premitive does Pass by reference, it passes address to the func. when the value updates into func., it will reflect to the obj_variable.
+function getCompny(name) {
+    company.title = "Swigey";
+    return name.title;
+};
+let company = {title: "Zomato"};
+console.log(getCompny(company)); // swegey, becoz pass variable happen by reference.
